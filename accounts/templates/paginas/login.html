@@ -1,0 +1,41 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="principal">
+        <div class="cadastro">
+            <div class="header">
+                <h2>Login</h2>
+            </div>
+            
+            <form id="form" class="form" method="POST">{%csrf_token%}
+                <div class="form-control ">
+                    <label for="username">Usuário</label>
+                    <input type="text" name="username" id="username" placeholder="Digite seu nome de usuário...">
+                </div>
+
+                <div class="form-control" >
+                    <label for="email">Senha</label>
+                    <input type="password" name="password" id="email" placeholder="Digite sua senha...">
+                </div>
+
+                <button type="submit">Entrar</button>
+
+
+    {%if messages%}
+    {%for mensagem in messages%}
+    <script>
+        alert('{{mensagem}}')
+    </script>
+    {%endfor%}
+    {%endif%}
+</body>
+</html>

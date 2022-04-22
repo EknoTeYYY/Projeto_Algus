@@ -1,0 +1,47 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="principal">
+        <div class="cadastro">
+            <div class="header">
+                <h2>Criar uma conta</h2>
+            </div>
+            
+            <form id="form" class="form" method="POST">{%csrf_token%}
+                <div class="form-control ">
+                    <label for="username">Nome de usuário</label>
+                    <input type="text" name="username" id="username" placeholder="Digite seu nome de usuário...">
+                </div>
+
+                <div class="form-control" >
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Digite seu endereço de email...">
+                </div>
+
+                <div class="form-control">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password" placeholder="Digite sua senha...">
+                </div>
+
+                <div class="form-control">
+                    <label for="password-confirmation">Confirme sua senha</label>
+                    <input type="password" name="password2" id="password-confirmation" placeholder="Digite sua senha novamente...">
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

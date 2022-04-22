@@ -1,0 +1,22 @@
+{%extends 'baseout.html'%}
+{%block 'out'%}
+    <main>
+        <h1>Atualizar produtos</h1>
+        <form method="POST">{%csrf_token%}
+            <div class="criar">
+                <input type="text" value="{{editar.nome}}" name="nome" placeholder="Nome do produto">
+                <input type="text" value="{{editar.quantidade}}" name="quantidade" placeholder="Quantidade">
+                <input type="text" value="{{editar.valor}}" name="valor" placeholder="R$">
+                <input type="text" value="{{editar.descricao}}" name="descricao" placeholder="Descrição">
+                <div class="adc">
+                    <label for="">Status</label>
+                    <select value="" name="status" id="">
+                        <option value="{{editar.status}}">Ativo</option>
+                        <option value="{{editar.status}}">inativo</option>
+                    </select>
+                    <button type="submit">Atualizar</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    {%endblock%}

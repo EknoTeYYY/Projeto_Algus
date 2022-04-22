@@ -1,0 +1,29 @@
+{%extends 'baseout.html'%}
+{%block 'out'%}
+<body>
+    <main>
+        <h1>Relatório</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                    <th>Descrição</th>
+                    <th>Data de venda</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for relatorio in relatorios %}
+                <tr>
+                    <td>{{relatorio.nome}}</td>
+                    <td>{{relatorio.quantidade}}</td>
+                    <td>{{relatorio.valor}}</td>
+                    <td>{{relatorio.descricao}}</td>
+                    <td>{{relatorio.data}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </main>
+{%endblock%}

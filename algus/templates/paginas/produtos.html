@@ -1,0 +1,42 @@
+{%extends 'baseout.html'%}
+{%block 'out'%}
+    <main>
+        <h1>Produtos</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                    <th>Descrição</th>
+                    <th>Status</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in produtos%}
+                <tr>
+                    <td>{{produto.nome}}</td>
+                    <td>{{produto.quantidade}}</td>
+                    <td>R${{produto.valor}}</td>
+                    <td>{{produto.descricao}}</td>
+                    {% if produto.status == True%}
+                    <td>Ativo</td>
+                    {%else%}
+                    <td>Inativo</td>
+                    {%endif%}
+                    <td class="btn"><a href="{%url 'excluir' produto.id%}">Venda</a></td>
+                    <td class="btn1"><a href="{%url 'editar' produto.id%}">Atualizar</a></td>
+                    <td class="btn2"><a href="{%url 'info' produto.id%}">Info</a></td>
+                    <td class="btn3"><a href="{%url 'diminuir' produto.id%}">Diminuir</a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+
+    </main>
+{%endblock%}

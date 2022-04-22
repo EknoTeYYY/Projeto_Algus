@@ -1,0 +1,55 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informação</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="principal">
+        <div class="cadastro">
+            <div class="header">
+                <h2>Informação do Produto</h2>
+            </div>
+            
+            <form id="form" class="form" method="POST">
+                <div class="form-control ">
+                    <label>Nome do Produto</label>
+                    <p>{{produtos.nome}}</p>
+                </div>
+
+                <div class="form-control" >
+                    <label>Quantidade</label>
+                    <p>{{produtos.quantidade}}</p>
+                </div>
+
+                <div class="form-control">
+                    <label>Valor</label>
+                    <p>R${{produtos.valor}}</p>
+                </div>
+
+                <div class="form-control">
+                    <label>Descrição</label>
+                    <p>{{produtos.descricao}}</p>
+                </div>
+                <div class="form-control">
+                    <label>Status</label>
+                    {% if produtos.status == True%}
+                    <p>Ativo</p>
+                    {%else%}
+                    <p>Inativo</p>
+                    {%endif%}
+                </div>
+
+                
+                <a href="{%url 'produto'%}">VOLTAR</a>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
